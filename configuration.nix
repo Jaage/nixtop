@@ -148,6 +148,7 @@ in
     wget
     mangohud
     easyeffects
+    winetricks
   ];
 
   programs.neovim = {
