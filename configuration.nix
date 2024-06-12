@@ -128,7 +128,7 @@ in
     protonup-qt
     fzf
     heroic
-#    lutris
+    lutris
     zoxide
     discord
     unzip
