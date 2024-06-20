@@ -19,9 +19,9 @@ in
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  #chaotic.scx.enable = true;
-  #chaotic.scx.scheduler = "scx_lavd";
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  chaotic.scx.enable = true;
+  chaotic.scx.scheduler = "scx_lavd";
   boot.kernelParams = [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
 
   nix.gc = {
@@ -122,6 +122,7 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    firefox
     latest.firefox-nightly-bin
     wl-clipboard
     foot
