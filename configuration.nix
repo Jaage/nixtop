@@ -24,6 +24,10 @@ in
   chaotic.scx.scheduler = "scx_lavd";
   boot.kernelParams = [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
 
+  environment.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = 0;
+  };
+
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 30d";
