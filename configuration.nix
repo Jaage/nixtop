@@ -26,6 +26,7 @@ in
 
   environment.sessionVariables = {
     MOZ_ENABLE_WAYLAND = 0;
+    DXVK_HDR = 1;
   };
 
   nix.gc = {
