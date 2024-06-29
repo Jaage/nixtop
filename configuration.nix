@@ -27,6 +27,8 @@ in
   environment.sessionVariables = {
     MOZ_ENABLE_WAYLAND = 0;
     DXVK_HDR = 1;
+    MANGOHUD  = "1";
+    MANGOHUD_CONFIGFILE = "/home/jjh/.config/MangoHud/MangoHud.conf";
   };
 
   nix.gc = {
@@ -75,6 +77,8 @@ in
 
   # Graphics
   hardware.graphics = {
+    extraPackages = with pkgs; [ mangohud ];
+    extraPackages32 = with pkgs; [ mangohud ];
     enable = true;
     enable32Bit = true;
   };
@@ -160,6 +164,7 @@ in
     mangohud
     easyeffects
     winetricks
+    mangohud
   ];
 
   programs.neovim = {
