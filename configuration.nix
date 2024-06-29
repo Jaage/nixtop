@@ -28,7 +28,7 @@ in
     MOZ_ENABLE_WAYLAND = 0;
     DXVK_HDR = 1;
     MANGOHUD  = "1";
-    MANGOHUD_CONFIGFILE = "/home/jjh/.config/MangoHud/MangoHud.conf";
+    MANGOHUD_CONFIGFILE = "/home/allmight/.config/MangoHud/MangoHud.conf";
   };
 
   nix.gc = {
