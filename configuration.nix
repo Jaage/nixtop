@@ -20,8 +20,8 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  chaotic.scx.enable = true;
-  chaotic.scx.scheduler = "scx_lavd";
+#  chaotic.scx.enable = true;
+#  chaotic.scx.scheduler = "scx_lavd";
   boot.kernelParams = [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
 
   environment.sessionVariables = {
