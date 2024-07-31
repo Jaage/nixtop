@@ -162,9 +162,9 @@ in
     vim 
     wget
     mangohud
-    easyeffects
     winetricks
     mangohud
+    path-of-building
   ];
 
   programs.neovim = {
