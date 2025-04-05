@@ -38,10 +38,10 @@ in
   nix.settings.auto-optimise-store = true;
 
   # Run
-  programs.nix-ld = {
-    enable = true;
-    libraries = pkgs.steam-run.fhsenv.args.multiPkgs pkgs;
-  };
+#  programs.nix-ld = {
+#    enable = true;
+#    libraries = pkgs.steam-run.fhsenv.args.multiPkgs pkgs;
+#  };
   programs.appimage.binfmt = true;
 
   networking.hostName = "ua"; # Define your hostname.
