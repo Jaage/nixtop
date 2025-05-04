@@ -19,8 +19,8 @@ in
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-#  boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  boot.kernelPackages = pkgs.linuxPackages;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+#  boot.kernelPackages = pkgs.linuxPackages;
 #  chaotic.scx.enable = true;
 #  chaotic.scx.scheduler = "scx_lavd";
 #  boot.kernelParams = [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
