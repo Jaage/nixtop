@@ -19,10 +19,11 @@ in
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+#  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages;
 #  chaotic.scx.enable = true;
 #  chaotic.scx.scheduler = "scx_lavd";
-  boot.kernelParams = [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
+#  boot.kernelParams = [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
 
   environment.sessionVariables = {
     MOZ_ENABLE_WAYLAND = 0;
@@ -77,18 +78,19 @@ in
 
   # Graphics
   hardware.graphics = {
-    extraPackages = with pkgs; [ mangohud ];
+    extraPackages = with pkgs; [ mangohud nvidia-vaapi-driver ];
     extraPackages32 = with pkgs; [ mangohud ];
     enable = true;
     enable32Bit = true;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+ #   modesetting.enable = true;
+#    powerManagement.enable = false;
+    open = true;
+#    nvidiaSettings = true;
+#    package = config.boot.kernelPackages.nvidiaPackages.beta;
+#    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   # Logitech
@@ -135,7 +137,8 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    latest.firefox-nightly-bin
+    firefox
+#    latest.firefox-nightly-bin
     wl-clipboard
     foot
     git
@@ -223,7 +226,7 @@ in
 
   nixpkgs.overlays =
     [
-      inputs.nixpkgs-mozilla.overlays.firefox
+#      inputs.nixpkgs-mozilla.overlays.firefox
       (final: prev: {
         discord = prev.discord.overrideAttrs (old: {
           buildInputs = (old.buildInputs or []) ++ [ final.makeWrapper ];

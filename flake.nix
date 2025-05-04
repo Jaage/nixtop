@@ -1,6 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+#    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-mozilla.url = "github:mozilla/nixpkgs-mozilla";
     nil.url = "github:oxalica/nil";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";

@@ -1,0 +1,58 @@
+kernel/fs/mbcache.ko.xz:
+kernel/fs/ext4/ext4.ko.xz: kernel/lib/crc16.ko.xz kernel/fs/mbcache.ko.xz kernel/fs/jbd2/jbd2.ko.xz
+kernel/fs/ext2/ext2.ko.xz: kernel/fs/mbcache.ko.xz
+kernel/fs/jbd2/jbd2.ko.xz:
+kernel/fs/xfs/xfs.ko.xz:
+kernel/crypto/crc32c_generic.ko.xz:
+kernel/lib/crc16.ko.xz:
+kernel/drivers/leds/led-class.ko.xz:
+kernel/drivers/acpi/platform_profile.ko.xz:
+kernel/drivers/misc/rpmb-core.ko.xz:
+kernel/drivers/dax/dax.ko.xz:
+kernel/drivers/scsi/scsi_mod.ko.xz: kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/scsi/scsi_common.ko.xz:
+kernel/drivers/scsi/sd_mod.ko.xz: kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/scsi/sr_mod.ko.xz: kernel/drivers/cdrom/cdrom.ko.xz kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/nvme/common/nvme-auth.ko.xz:
+kernel/drivers/nvme/host/nvme-core.ko.xz: kernel/drivers/nvme/common/nvme-auth.ko.xz
+kernel/drivers/nvme/host/nvme.ko.xz: kernel/drivers/nvme/host/nvme-core.ko.xz kernel/drivers/nvme/common/nvme-auth.ko.xz
+kernel/drivers/cdrom/cdrom.ko.xz:
+kernel/drivers/usb/host/ehci-hcd.ko.xz:
+kernel/drivers/usb/host/ehci-pci.ko.xz: kernel/drivers/usb/host/ehci-hcd.ko.xz
+kernel/drivers/usb/host/ohci-hcd.ko.xz:
+kernel/drivers/usb/host/ohci-pci.ko.xz: kernel/drivers/usb/host/ohci-hcd.ko.xz
+kernel/drivers/usb/host/uhci-hcd.ko.xz:
+kernel/drivers/usb/host/xhci-hcd.ko.xz:
+kernel/drivers/usb/host/xhci-pci.ko.xz: kernel/drivers/usb/host/xhci-hcd.ko.xz
+kernel/drivers/usb/storage/usb-storage.ko.xz: kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/input/keyboard/atkbd.ko.xz: kernel/drivers/input/serio/libps2.ko.xz kernel/drivers/input/serio/serio.ko.xz kernel/drivers/input/vivaldi-fmap.ko.xz
+kernel/drivers/input/ff-memless.ko.xz:
+kernel/drivers/input/vivaldi-fmap.ko.xz:
+kernel/drivers/md/dm-mod.ko.xz: kernel/drivers/dax/dax.ko.xz
+kernel/drivers/mmc/core/mmc_core.ko.xz:
+kernel/drivers/mmc/core/mmc_block.ko.xz: kernel/drivers/misc/rpmb-core.ko.xz kernel/drivers/mmc/core/mmc_core.ko.xz
+kernel/drivers/hid/hid.ko.xz:
+kernel/drivers/hid/hid-generic.ko.xz: kernel/drivers/hid/hid.ko.xz
+kernel/drivers/hid/hid-apple.ko.xz: kernel/drivers/leds/led-class.ko.xz kernel/drivers/hid/hid.ko.xz
+kernel/drivers/hid/hid-cherry.ko.xz: kernel/drivers/hid/hid.ko.xz
+kernel/drivers/hid/hid-corsair.ko.xz: kernel/drivers/hid/usbhid/usbhid.ko.xz kernel/drivers/leds/led-class.ko.xz kernel/drivers/hid/hid.ko.xz
+kernel/drivers/hid/hid-lenovo.ko.xz: kernel/drivers/acpi/platform_profile.ko.xz kernel/drivers/leds/led-class.ko.xz kernel/drivers/hid/hid.ko.xz
+kernel/drivers/hid/hid-logitech-dj.ko.xz: kernel/drivers/hid/usbhid/usbhid.ko.xz kernel/drivers/hid/hid.ko.xz
+kernel/drivers/hid/hid-logitech-hidpp.ko.xz: kernel/drivers/hid/usbhid/usbhid.ko.xz kernel/drivers/hid/hid.ko.xz
+kernel/drivers/hid/hid-microsoft.ko.xz: kernel/drivers/input/ff-memless.ko.xz kernel/drivers/hid/hid.ko.xz
+kernel/drivers/hid/hid-roccat.ko.xz: kernel/drivers/hid/hid.ko.xz
+kernel/drivers/hid/usbhid/usbhid.ko.xz: kernel/drivers/hid/hid.ko.xz
+kernel/drivers/ata/libata.ko.xz: kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/ata/ahci.ko.xz: kernel/drivers/ata/libahci.ko.xz kernel/drivers/ata/libata.ko.xz kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/ata/libahci.ko.xz: kernel/drivers/ata/libata.ko.xz kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/ata/ata_piix.ko.xz: kernel/drivers/ata/libata.ko.xz kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/ata/sata_nv.ko.xz: kernel/drivers/ata/libata.ko.xz kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/ata/sata_sis.ko.xz: kernel/drivers/ata/pata_sis.ko.xz kernel/drivers/ata/libata.ko.xz kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/ata/sata_uli.ko.xz: kernel/drivers/ata/libata.ko.xz kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/ata/sata_via.ko.xz: kernel/drivers/ata/libata.ko.xz kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/ata/pata_marvell.ko.xz: kernel/drivers/ata/libata.ko.xz kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/ata/pata_sis.ko.xz: kernel/drivers/ata/libata.ko.xz kernel/drivers/scsi/scsi_mod.ko.xz kernel/drivers/scsi/scsi_common.ko.xz
+kernel/drivers/input/serio/serio.ko.xz:
+kernel/drivers/input/serio/i8042.ko.xz: kernel/drivers/input/serio/serio.ko.xz
+kernel/drivers/input/serio/pcips2.ko.xz: kernel/drivers/input/serio/serio.ko.xz
+kernel/drivers/input/serio/libps2.ko.xz:
