@@ -171,7 +171,8 @@ in
     path-of-building
     ghostty
     terminus_font
-    zig
+    inputs.zig
+    # zig
   ];
 
   programs.neovim = {
