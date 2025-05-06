@@ -200,15 +200,16 @@ in
       '';
       packages.myVimPackage = with pkgs.vimPlugins; {
         start = [
-          # fidget-nvim
-          # lsp-zero-nvim
-          # vim-nix
-          # luasnip
-          # nvim-lspconfig
-          # nvim-cmp
-          # cmp_luasnip
-          # cmp-nvim-lsp
-          # harpoon
+          fidget-nvim
+          lsp-zero-nvim
+          vim-nix
+          luasnip
+          nvim-lspconfig
+          nvim-cmp
+          cmp_luasnip
+          cmp-nvim-lsp
+          harpoon
+
           # multicursors-nvim
           # gitsigns-nvim
           # which-key-nvim
