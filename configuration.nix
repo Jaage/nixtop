@@ -159,6 +159,7 @@ in
     stow
     eza
     fd
+    ripgrep
     btop
     obs-studio
     ffmpeg
