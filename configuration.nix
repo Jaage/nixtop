@@ -171,7 +171,6 @@ in
     path-of-building
     ghostty
     terminus_font
-    speedtest
   ];
 
   programs.neovim = {
