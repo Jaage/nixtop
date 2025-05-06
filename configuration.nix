@@ -167,6 +167,7 @@ in
     winetricks
     mangohud
     path-of-building
+    ghostty
   ];
 
   programs.neovim = {
