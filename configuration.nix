@@ -168,6 +168,7 @@ in
     mangohud
     path-of-building
     ghostty
+    terminus_font
   ];
 
   programs.neovim = {
