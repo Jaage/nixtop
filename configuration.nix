@@ -6,6 +6,7 @@
 
 let
   luaRc = import /etc/nixos/luaRc.nix;
+#    luaRc = import /home/allmight/.config/nvim/luaRc.nix; 
 in
 {
   imports =
@@ -199,15 +200,26 @@ in
       '';
       packages.myVimPackage = with pkgs.vimPlugins; {
         start = [
-          fidget-nvim
-          lsp-zero-nvim
-          vim-nix
-          luasnip
-          nvim-lspconfig
-          nvim-cmp
-          cmp_luasnip
-          cmp-nvim-lsp
-          harpoon
+          # fidget-nvim
+          # lsp-zero-nvim
+          # vim-nix
+          # luasnip
+          # nvim-lspconfig
+          # nvim-cmp
+          # cmp_luasnip
+          # cmp-nvim-lsp
+          # harpoon
+          # multicursors-nvim
+          # gitsigns-nvim
+          # which-key-nvim
+          # telescope-nvim
+          # nvim-lspconfig
+          # conform-nvim
+          # blink-cmp
+          # tokyonight-nvim
+          # todo-comments-nvim
+          # mini-nvim
+          # nvim-treesitter
         ];
       };
     };
