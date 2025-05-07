@@ -6,6 +6,8 @@
   home.username = "allmight";
   home.homeDirectory = "/home/allmight";
 
+  xdg.configFile.nvim.source = "/home/allmight/.config/nvim";
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards

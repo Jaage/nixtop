@@ -29,6 +29,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.allmight = ./home.nix;
+          home-manager.backupFileExtension = "backup";
         }
         inputs.chaotic.nixosModules.default
 #        inputs.stylix.nixosModules.stylix
