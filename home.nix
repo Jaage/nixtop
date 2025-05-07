@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/allmight";
 
   xdg.configFile.nvim.source = "/home/allmight/.config/nvim";
-  programs.neovim.enable = true;
+  #  programs.neovim.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

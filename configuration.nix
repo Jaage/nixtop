@@ -109,8 +109,23 @@ in
     openFirewall = true;
   };
 
+  # Security
+  security = {
+    rtkit.enable = true;
+    sudo.extraRules = [
+      {
+        users = [ "allmight" ];
+        commands = [
+          {
+            command = "${pkgs.nixos-rebuild}/bin/nixos-rebuild switch";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+      }
+    ];
+  };
+
   # Enable sound.
-  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
