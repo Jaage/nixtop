@@ -6,7 +6,6 @@
 
 let
   luaRc = import /etc/nixos/luaRc.nix;
-#    luaRc = import /home/allmight/.config/nvim/luaRc.nix; 
 in
 {
   imports =
