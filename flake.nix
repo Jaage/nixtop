@@ -1,6 +1,8 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixpkgs-mozilla.url = "github:mozilla/nixpkgs-mozilla";
     nil.url = "github:oxalica/nil";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
@@ -12,6 +14,7 @@
   outputs = {
     self,
     nixpkgs,
+    home-manager,
     #    zig-overlay,
     #    zls,
     ...
@@ -21,6 +24,12 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.allmight = ./home.nix;
+        }
         inputs.chaotic.nixosModules.default
 #        inputs.stylix.nixosModules.stylix
           # zig-overlay.packages.x86_64-linux.master
