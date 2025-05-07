@@ -13,6 +13,9 @@ in
       ./hardware-configuration.nix
     ];
 
+  # Binaries Source
+  nix.binaryCaches = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
+
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

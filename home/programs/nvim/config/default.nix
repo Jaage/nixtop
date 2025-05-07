@@ -1,14 +1,16 @@
-{self, ...}: {
-
+{pkgs, ...}: {
   # Import all your configuration modules here
-  imports = [ 
+  imports = [
+    ./autocmds.nix
     ./bufferline.nix
     ./options.nix
+    ./keymaps.nix
+    ./plugins/gitsigns.nix
+    ./plugins/telescope.nix
+    ./plugins/whichkey.nix
   ];
-  
-  globals = {
-    mapleader = " ";
-    maplocalleader = " ";
-    have_nerd_font = true;
-  };
+
+  extraPlugins = with pkgs.vimPlugins; [
+    vim-sleuth
+  ];
 }
