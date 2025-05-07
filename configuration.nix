@@ -12,12 +12,13 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-
-  # Binaries Source
   nix.binaryCaches = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
 
-  # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # Flakes and binaries source
+  nix.settings = {
+    substituters = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
+    experimental-features = [ "nix-command" "flakes" ];
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
