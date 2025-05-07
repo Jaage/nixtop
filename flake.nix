@@ -4,16 +4,16 @@
     nixpkgs-mozilla.url = "github:mozilla/nixpkgs-mozilla";
     nil.url = "github:oxalica/nil";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    zig-overlay.url = "github:mitchellh/zig-overlay";
-    zls.url = "github:zigtools/zls";
+    #    zig-overlay.url = "github:mitchellh/zig-overlay";
+    #    zls.url = "github:zigtools/zls";
 #    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
     self,
     nixpkgs,
-    zig-overlay,
-    zls,
+    #    zig-overlay,
+    #    zls,
     ...
   } @ inputs: {
     nixosConfigurations.ua = nixpkgs.lib.nixosSystem {
