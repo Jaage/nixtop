@@ -12,7 +12,6 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  nix.binaryCaches = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
 
   # Flakes and binaries source
   nix.settings = {
