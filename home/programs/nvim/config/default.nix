@@ -6,6 +6,7 @@
     ./options.nix
     ./keymaps.nix
     ./plugins/gitsigns.nix
+    ./plugins/lazydev.nix
     ./plugins/telescope.nix
     ./plugins/whichkey.nix
   ];
