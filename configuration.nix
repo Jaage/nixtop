@@ -173,7 +173,6 @@ in
     solaar
     fastfetch
     nix-prefetch
-    nil
     stow
     eza
     fd

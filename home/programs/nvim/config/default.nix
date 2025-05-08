@@ -5,6 +5,7 @@
     ./bufferline.nix
     ./options.nix
     ./keymaps.nix
+    ./lsp/lsp.nix
     ./plugins/gitsigns.nix
     ./plugins/lazydev.nix
     ./plugins/telescope.nix
