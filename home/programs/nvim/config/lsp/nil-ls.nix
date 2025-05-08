@@ -1,4 +1,4 @@
-{ configs, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   lsp.servers = {
     nil_ls = {
