@@ -187,6 +187,7 @@ in
     path-of-building
     ghostty
     terminus_font
+    linuxPackages_latest.perf
   ];
 
   # programs.neovim = {
