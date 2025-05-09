@@ -154,95 +154,47 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # Browser
     firefox
-#    latest.firefox-nightly-bin
-    wl-clipboard
-    foot
-    git
-    betterdiscordctl
-    protonup-qt
+
+    # CLI
+    btop
+    eza
+    fastfetch
+    fd
+    ffmpeg
     fzf
+    git
+    gzip
+    linuxPackages_latest.perf
+    nix-prefetch
+    pigz
+    protonup-qt
+    ripgrep
+    stow
+    unzip
+    wget
+    winetricks
+    wl-clipboard
+    zoxide
+
+    # Fonts
+    terminus_font
+
+    # Terminal
+    ghostty
+
+    # Programs
+    betterdiscordctl
+    discord
     heroic
     lutris
-    zoxide
-    discord
-    unzip
-    gzip
-    pigz
-    solaar
-    fastfetch
-    nix-prefetch
-    stow
-    eza
-    fd
-    ripgrep
-    btop
+    mangohud
     obs-studio
-    ffmpeg
-    vim 
-    wget
-    mangohud
-    winetricks
-    mangohud
     path-of-building
-    ghostty
-    terminus_font
-    linuxPackages_latest.perf
+    solaar
+    vim 
   ];
-
-  # programs.neovim = {
-  #   enable = true;
-  #   defaultEditor = true;
-  #   viAlias = false;
-  #   vimAlias = true;
-  #   configure = {
-  #     customRC = ''
-  #       set number relativenumber
-  #       set mouse=a
-  #       set clipboard=unnamedplus
-  #       set breakindent
-  #       set undofile
-  #       set ignorecase
-  #       set smartcase
-  #       set signcolumn=yes
-  #       set updatetime=250
-  #       set cursorline
-  #       set scrolloff=10
-  #       set expandtab
-  #       set tabstop=2
-  #       set shiftwidth=2
-  #
-  #       lua <<EOF
-  #       ${luaRc.luaRc}
-  #       EOF
-  #     '';
-  #     packages.myVimPackage = with pkgs.vimPlugins; {
-  #       start = [
-  #         fidget-nvim
-  #         lsp-zero-nvim
-  #         vim-nix
-  #         luasnip
-  #         nvim-lspconfig
-  #         nvim-cmp
-  #         cmp_luasnip
-  #         cmp-nvim-lsp
-  #         harpoon
-  #
-  #         # multicursors-nvim
-  #         # gitsigns-nvim
-  #         # which-key-nvim
-  #         # telescope-nvim
-  #         # nvim-lspconfig
-  #         # conform-nvim
-  #         # blink-cmp
-  #         # tokyonight-nvim
-  #         # todo-comments-nvim
-  #         # mini-nvim
-  #         # nvim-treesitter
-  #       ];
-  #     };
-  #   };
-  # };
 
   programs.steam = {
     enable = true;
@@ -283,7 +235,7 @@ in
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 22 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
