@@ -7,8 +7,10 @@
     ./keymaps.nix
     # ./usercommands.nix
     ./lsp/lsp.nix
+    ./plugins/blink-cmp.nix
     ./plugins/gitsigns.nix
     ./plugins/lazydev.nix
+    ./plugins/lz-n.nix
     ./plugins/telescope.nix
     ./plugins/whichkey.nix
   ];
