@@ -8,7 +8,7 @@
     home-manager.url = "github:nix-community/home-manager";
     nil.url = "github:oxalica/nil";
     nil.inputs.nixpkgs.follows = "nixpkgs";
-    # nixvim.url = "github:Jaage/nixvim";
+    nixvim.url = "github:Jaage/nixvim";
     # stylix.url = "github:danth/stylix";
     # zig-overlay.url = "github:mitchellh/zig-overlay";
     # zls.url = "github:zigtools/zls";
