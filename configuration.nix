@@ -2,11 +2,8 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 
-let
-  luaRc = import /etc/nixos/luaRc.nix;
-in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -211,7 +208,6 @@ in
 
   nixpkgs.overlays =
     [
-#      inputs.nixpkgs-mozilla.overlays.firefox
       (final: prev: {
         discord = prev.discord.overrideAttrs (old: {
           buildInputs = (old.buildInputs or []) ++ [ final.makeWrapper ];
