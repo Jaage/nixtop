@@ -1,22 +1,25 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixpkgs-mozilla.url = "github:mozilla/nixpkgs-mozilla";
-    nil.url = "github:oxalica/nil";
+
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    #    zig-overlay.url = "github:mitchellh/zig-overlay";
-    #    zls.url = "github:zigtools/zls";
-#    stylix.url = "github:danth/stylix";
+    chaotic.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager";
+    nil.url = "github:oxalica/nil";
+    nil.inputs.nixpkgs.follows = "nixpkgs";
+    # nixvim.url = "github:Jaage/nixvim";
+    # stylix.url = "github:danth/stylix";
+    # zig-overlay.url = "github:mitchellh/zig-overlay";
+    # zls.url = "github:zigtools/zls";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    #    zig-overlay,
-    #    zls,
+    # zig-overlay,
+    # zls,
     ...
   } @ inputs: {
     nixosConfigurations.ua = nixpkgs.lib.nixosSystem {
@@ -32,9 +35,10 @@
           home-manager.backupFileExtension = "backup";
         }
         inputs.chaotic.nixosModules.default
-#        inputs.stylix.nixosModules.stylix
-          # zig-overlay.packages.x86_64-linux.master
-          #        inputs.zls.packages.x86_64-linux
+        # inputs.nixvim.packages.x86_64-linux.default
+        # inputs.stylix.nixosModules.stylix
+        # zig-overlay.packages.x86_64-linux.master
+        # inputs.zls.packages.x86_64-linux
       ];
     };
   };
