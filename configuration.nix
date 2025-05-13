@@ -191,6 +191,7 @@ in
     lutris
     mangohud
     obs-studio
+    inputs.nixvim
     path-of-building
     solaar
     vim 
