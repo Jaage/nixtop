@@ -35,7 +35,6 @@
           home-manager.backupFileExtension = "backup";
         }
         inputs.chaotic.nixosModules.default
-        # inputs.nixvim.packages.x86_64-linux.default
         # inputs.stylix.nixosModules.stylix
         # zig-overlay.packages.x86_64-linux.master
         # inputs.zls.packages.x86_64-linux
