@@ -33,4 +33,6 @@
     # See `:help 'confirm'`
     confirm = true;
   };
+
+  viAlias = true;
 }

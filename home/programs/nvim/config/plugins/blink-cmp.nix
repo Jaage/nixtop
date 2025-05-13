@@ -2,10 +2,10 @@
   plugins.blink-ripgrep.enable = true;
   plugins.blink-cmp = {
     enable = true;
-   # lazyLoad.settings.event = [
-    #   "InsertEnter"
-    #   "CmdlineEnter"
-    # ];
+   lazyLoad.settings.event = [
+      "InsertEnter"
+      "CmdlineEnter"
+    ];
     # lazyLoad.settings.ft = "nix";
     settings = {
       appearance = {
