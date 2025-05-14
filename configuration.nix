@@ -155,6 +155,7 @@
     firefox
 
     # CLI
+    bat
     btop
     eza
     fastfetch
@@ -191,7 +192,7 @@
     inputs.nixvim.packages.x86_64-linux.default
     path-of-building
     solaar
-    vim 
+    vim
   ];
 
   programs.steam = {

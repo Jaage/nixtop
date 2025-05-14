@@ -11,15 +11,15 @@
     nixvim.url = "github:Jaage/nixvim";
     # stylix.url = "github:danth/stylix";
     # zig-overlay.url = "github:mitchellh/zig-overlay";
+    # zig-overlay.inputs.nixpkgs.follows ="nixpkgs";
     # zls.url = "github:zigtools/zls";
+    # zls.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    # zig-overlay,
-    # zls,
     ...
   } @ inputs: {
     nixosConfigurations.ua = nixpkgs.lib.nixosSystem {
@@ -36,8 +36,6 @@
         }
         inputs.chaotic.nixosModules.default
         # inputs.stylix.nixosModules.stylix
-        # zig-overlay.packages.x86_64-linux.master
-        # inputs.zls.packages.x86_64-linux
       ];
     };
   };
