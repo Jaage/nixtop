@@ -12,8 +12,6 @@
     # stylix.url = "github:danth/stylix";
     # zig-overlay.url = "github:mitchellh/zig-overlay";
     # zig-overlay.inputs.nixpkgs.follows ="nixpkgs";
-    # zls.url = "github:zigtools/zls";
-    # zls.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
