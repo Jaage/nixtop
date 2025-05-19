@@ -169,6 +169,7 @@
     pigz
     protonup-qt
     ripgrep
+    starship
     stow
     unzip
     wget
