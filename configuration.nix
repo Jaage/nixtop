@@ -169,6 +169,7 @@
     pigz
     protonup-qt
     ripgrep
+    smartmontools
     starship
     stow
     unzip
