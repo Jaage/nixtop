@@ -20,10 +20,22 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
-#  boot.kernelPackages = pkgs.linuxPackages;
 #  chaotic.scx.enable = true;
 #  chaotic.scx.scheduler = "scx_lavd";
-#  boot.kernelParams = [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
+
+  # Impermanence
+  boot.initrd.systemd.services.rollback = {
+    description = "Rollback ZFS datasets to a blank state snapshotted imediately after creation.";
+    wantedBy = [ "initrd.target" ];
+    after = [ "zfs-import-zroot.service" ];
+    before = [ "sysroot.mount" ];
+    path = pkgs.zfs;
+    unitConfig.DefaultDependencies = "no";
+    serviceConfig.type = "oneshot";
+    script = ''
+      zfs rollback -r zroot/root@blank && echo "Blank snapshot rollback completed successfully."
+    '';
+  };
 
   environment.sessionVariables = {
     MOZ_ENABLE_WAYLAND = 0;
