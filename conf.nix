@@ -10,6 +10,14 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_6_14;
 
+  # Flakes
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+  };
+
   # Impermanence
   #boot.initrd.systemd.services.rollback = {
   #description = "Rollback ZFS datasets to a blank snapshot taken immediately after disko formatting.";
@@ -30,6 +38,7 @@
   #script = ''
   #  zfs rollback -r zroot/root@blank && echo "blank rollback complete"
   #'';
+  fileSystems."/persist".neededForBoot = true;
 
   networking.hostName = "nixos";
   networking.hostId = enter_an_8_byte_id_here
