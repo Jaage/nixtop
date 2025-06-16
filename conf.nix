@@ -12,7 +12,7 @@
 
   # Impermanence
   #boot.initrd.systemd.services.rollback = {
-  #description = "Rollback ZFS datasets to a pristine state";
+  #description = "Rollback ZFS datasets to a blank snapshot taken immediately after disko formatting.";
   #wantedBy = [
   #  "initrd.target"
   #]; 
