@@ -43,11 +43,19 @@
   environment.persistence."/persist" = {
     directories = [
       "/etc/nixos"
+      "/var/lib/nixos"
+      "/var/lib/systemd"
+      "/var/log/journal/"machine-id
     ];
     files = [
+      "etc/group"
+      "etc/gshadow"
       "/etc/machine-id"
       "/etc/passwd"
       "/etc/shadow"
+      "etc/subgid"
+      "etc/subuid"
+      "etc/zfs/zpool.cache"
     ];
   };
 
