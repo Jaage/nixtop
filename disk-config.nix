@@ -3,7 +3,7 @@
     disk = {
       root = {
         type = "disk";
-        device = "/dev/nvme1n1";
+        device = "/dev/nvme0n1";
         content = {
           type = "gpt";
           partitions = {
@@ -32,11 +32,7 @@
       zroot = {
         type = "zpool";
         rootFsOptions = {
-          mountpoint = "none";
-        };
-        options = {
           acltype = "posixacl";
-          ashift = "12";
           atime = "off";
           compression = "zstd";
           encryption = "aes-256-gcm";
@@ -45,8 +41,12 @@
           keylocation = "prompt";
           recordsize = "64k";
           xattr = "sa";
+          mountpoint = "none";
         };
-        postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
+        options = {
+          ashift = "12";
+        };
+        postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot/root@blank$' || zfs snapshot zroot/root@blank";
         datasets = {
 
           "root" = {
