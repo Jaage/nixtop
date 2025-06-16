@@ -20,25 +20,36 @@
 
   # Impermanence
   #boot.initrd.systemd.services.rollback = {
-  #description = "Rollback ZFS datasets to a blank snapshot taken immediately after disko formatting.";
-  #wantedBy = [
-  #  "initrd.target"
-  #]; 
-  #after = [
-  #  "zfs-import-zroot.service"
-  #];
-  #before = [ 
-  #  "sysroot.mount"
-  #];
-  #path = with pkgs; [
-  #  zfs
-  #];
-  #unitConfig.DefaultDependencies = "no";
-  #serviceConfig.Type = "oneshot";
-  #script = ''
-  #  zfs rollback -r zroot/root@blank && echo "blank rollback complete"
-  #'';
+  #  description = "Rollback ZFS datasets to a blank snapshot taken immediately after disko formatting.";
+  #  wantedBy = [
+  #    "initrd.target"
+  #  ]; 
+  #  after = [
+  #    "zfs-import-zroot.service"
+  #  ];
+  #  before = [ 
+  #    "sysroot.mount"
+  #  ];
+  #  path = with pkgs; [
+  #    zfs
+  #  ];
+  #  unitConfig.DefaultDependencies = "no";
+  #  serviceConfig.Type = "oneshot";
+  #  script = ''
+  #    zfs rollback -r zroot/root@blank && echo "blank rollback complete"
+  #  '';
+  #};
   fileSystems."/persist".neededForBoot = true;
+  environment.persistence."/persist" = {
+    directories = [
+      "/etc/nixos"
+    ];
+    files = [
+      "/etc/machine-id"
+      "/etc/passwd"
+      "/etc/shadow"
+    ];
+  };
 
   networking.hostName = "nixos";
   networking.hostId = enter_an_8_byte_id_here
