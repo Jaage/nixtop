@@ -32,6 +32,7 @@
   #'';
 
   networking.hostName = "nixos";
+  networking.hostId = enter_an_8_byte_id_here
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Los_Angeles";
